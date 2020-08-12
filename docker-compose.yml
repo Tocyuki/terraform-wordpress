@@ -1,0 +1,10 @@
+version: '3.6'
+
+services:
+  terraform:
+    image: hashicorp/terraform:0.12.28
+    container_name: terraform
+    volumes:
+      - ./terraform:/terraform
+    env_file: .env
+    working_dir: /terraform
