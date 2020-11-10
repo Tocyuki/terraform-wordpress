@@ -1,0 +1,1 @@
+variable "naked_domain" {}

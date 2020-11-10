@@ -9,6 +9,14 @@ locals {
     SystemName  = local.name
     Environment = terraform.workspace
   }
+
+  # domain
+  naked_domain = "tocyuki.net"
+  web_domain   = "dev.${local.naked_domain}"
+
+  # web
+  web_instance_type  = "t3a.nano"
+  key_pair_file_path = "./user_files/.ssh/dev_rsa.pub"
 }
 
 
@@ -23,4 +31,25 @@ variable "vpc_cidr" {
 
 variable "azs" {
   default = ["us-east-1a", "us-east-1d"]
+}
+
+# db
+variable "db_username" {
+  default = "root"
+}
+
+variable "db_instance_type" {
+  default = {
+    dev = "db.t2.small"
+    stg = "db.r5.large"
+    prd = "db.r5.xlarge"
+  }
+}
+
+variable "db_engine_mode" {
+  default = {
+    dev = "provisioned"
+    stg = "serverless"
+    prd = "serverless"
+  }
 }

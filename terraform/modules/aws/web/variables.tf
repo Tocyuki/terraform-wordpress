@@ -1,0 +1,14 @@
+variable "env" {}
+variable "name" {}
+variable "common_tags" {}
+variable "vpc" {}
+variable "azs" {}
+variable "instance_type" {}
+variable "public_subnets" {}
+variable "private_subnets" {}
+variable "key_pair_file_path" {}
+variable "aws_account_id" {}
+variable "db_security_group" {}
+variable "web_alb_log_bucket" {}
+variable "route53_zone" {}
+variable "domain" {}
